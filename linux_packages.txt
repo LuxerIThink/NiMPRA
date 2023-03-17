@@ -13,7 +13,7 @@ bash-completion
 nano
 net-tools
 iputils-ping
-terminator
+kitty
 git
 x11-apps
 libgl1-mesa-glx

@@ -1,4 +1,7 @@
-docker build -t ros2foxy -f Dockerfile . --privileged -it --rm --name=ros2foxy --shm-size=1g --ulimit memlock=-1
+ECHO " WARNING!"
+ECHO  %USERNAME% need to be filled manual
+ECHO  also you need to install VcXsrv for screen
+docker run -t ros2foxy -f Dockerfile . --privileged -it --rm --name=ros2foxy --shm-size=1g --ulimit memlock=-1
 -e DISPLAY -e LIBGL_ALWAYS_INDIRECT=0 -e QT_X11_NO_MITSHM=1 -e ROS_CONTAINER_NAME=ros2foxy
 -e ROS_SHARED_FOLDER=C:\Users\%USERNAME%\Nimpra_Shared
 -v C:\Users\%USERNAME%\Nimpra_Shared:/root/Shared:rw --net=host ros2foxy
