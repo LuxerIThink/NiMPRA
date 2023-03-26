@@ -1,3 +1,4 @@
+tzdata
 apt-utils
 software-properties-common
 wget
@@ -19,3 +20,5 @@ x11-apps
 libgl1-mesa-glx
 libgl1-mesa-dri
 mesa-utils
+python3-pip
+python3-tk

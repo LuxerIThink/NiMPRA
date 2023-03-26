@@ -1,14 +1,14 @@
 FROM osrf/ros:foxy-desktop
 
-COPY linux_packages.txt .
+COPY packages.txt .
 COPY root.bashrc .
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ=Europe/Warsaw
 
 RUN echo "Installing dependencies..." \
     && apt-get update -yq \
-    && apt-get install -yq --no-install-recommends tzdata \
-    && apt-get install -yq --no-install-recommends $(cat linux_packages.txt) \
+    && apt-get install -yq --no-install-recommends $(cat packages.txt) \
     && apt-get -y autoclean autoremove clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -19,4 +19,8 @@ RUN echo "Install ROS..." \
     && cat root.bashrc >> /root/.bashrc \
     && touch /root/.Xauthority
 
-WORKDIR /root/
+ENV SHARED_DIR=/root/Shared/ros2_ws
+
+RUN mkdir -p $SHARED_DIR/src
+
+WORKDIR $SHARED_DIR
