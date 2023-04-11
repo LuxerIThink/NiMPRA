@@ -16,4 +16,4 @@ docker run -it --rm \
 	--device=/dev/video0 \
 	--net=host \
 	ros2foxy \
-	bash
+	kitty
