@@ -5,6 +5,7 @@ COPY root.bashrc .
 
 ENV DEBIAN_FRONTEND=noninteractive
 ENV TZ=Europe/Warsaw
+ENV SHARED_DIR=/root/Shared/ros2_ws
 
 RUN echo "Installing dependencies..." \
     && apt-get update -yq \
@@ -18,8 +19,6 @@ RUN echo "Install ROS..." \
     && sed -i "s/#force_color_prompt=yes/force_color_prompt=yes/g" /root/.bashrc \
     && cat root.bashrc >> /root/.bashrc \
     && touch /root/.Xauthority
-
-ENV SHARED_DIR=/root/Shared/ros2_ws
 
 RUN mkdir -p $SHARED_DIR/src
 
