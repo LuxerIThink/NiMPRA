@@ -4,4 +4,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 export USER=root
 # ROS setup
-source /opt/ros/$ROS_DISTRO/setup.bash
+echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
