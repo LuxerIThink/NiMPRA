@@ -1,11 +1,8 @@
 # Ros 2 Foxy Docker
 
-## Introduction
-
 It'a a easy to use Docker container package with ROS 2 Foxy distro.
 Created mainly for Robotics and Autonomus Systems specialization
 students in Poznan University of Technology.
-
 
 ## Key features
 
